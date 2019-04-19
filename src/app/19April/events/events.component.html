@@ -1,0 +1,29 @@
+<h3>
+  {{title }}
+</h3>
+
+<!-- <input [value]="title" #test (keyup)="title = test.value" /> -->
+<!-- <span *ngIf="!test.value">Please enter valid value.</span> -->
+
+<input class="form-control" type="text" (keydown.enter)="onClick()" [(ngModel)]="title" #input="ngModel" name="name"
+  required minlength="3" />
+<button type="submit" class="btn btn-success" (click)="onClick()" [disabled]="!input.valid">Click me</button>
+<br />
+
+<!-- <span *ngIf="input.errors">
+  <span class="text-danger" *ngIf="input.errors.required">Please enter valid value.</span>
+  <span class="text-danger" *ngIf="input.errors.minlength">Min Length is 3 required.</span>
+</span> -->
+<br />
+
+<span class="text-danger" *ngIf="input.hasError('required')">Please enter valid value.</span>
+<span class="text-danger" *ngIf="input.hasError('minlength')">Min Length is 3 required.</span>
+
+<ul class="list-1">
+  <li *ngFor="let todo of todos; let i =index; let odd= odd;">
+    <div [class.bg-success]="odd">
+      <input type="checkbox" [(ngModel)]="todo.isCompleted" />
+      {{todo.todoName}}
+    </div>
+  </li>
+</ul>
