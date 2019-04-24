@@ -19,7 +19,7 @@ export class EventsComponent implements OnInit {
   }
 
   onClick()   {
-    console.log('Hello World..!!', this.title,  this.inputDom);
+    console.log('Hello World..!!', this.title);
    // this.title = "Title Changed..";
    this.todos.push({isCompleted: false, todoName: this.title});
 

@@ -1,0 +1,45 @@
+<ul>
+  <li *ngFor="let val of arr;">
+    <span>{{val}}</span>
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let obj of arrObj;">
+    <span>{{obj.name}}</span>
+    <ul>
+      <li *ngFor="let innerObj of obj.arr; let even= even;">
+        <span *ngIf="even; else tem1" [class.bg-success]="even">
+          {{innerObj}} {{even}} {{obj.obj.ls}}
+        </span>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<span [hidden]="false">
+  Hidden
+</span>
+
+<app-test1 *ngIf="false"></app-test1>
+
+<ng-template #tem1>
+  <span>
+    Vijay Thapak 1
+  </span>
+</ng-template>
+
+<ng-template #tem2>
+  <span>
+    Vijay Thapak 2
+  </span>
+</ng-template>
+
+
+<h3>Switch Case</h3>
+<ul [ngSwitch]="switchValue">
+  <li *ngSwitchCase="1">1</li>
+  <li *ngSwitchCase="2">2</li>
+  <li *ngSwitchCase="3">3</li>
+  <li *ngSwitchDefault>Default</li>
+</ul>

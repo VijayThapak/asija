@@ -1,0 +1,18 @@
+<p class="text-success" [class.text-xyx]="true">
+  att-dir works!
+</p>
+<p class="text-success" [ngClass]="{'test1': true, 'test2': true}">
+  att-dir works!
+</p>
+<p class="text-success" [ngClass]="addClasses()">
+  att-dir works!
+</p>
+
+
+<p [style.color]="false ? 'red' : 'green'">
+  Style
+</p>
+
+<p [ngStyle]="{'color': 'yellow'}" [attr.id]="'test1'" [attr.tabindex]="0">
+  Sytle
+</p>

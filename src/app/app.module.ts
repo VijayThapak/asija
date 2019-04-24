@@ -7,6 +7,8 @@ import { Test1Component } from './test1/test1.component';
 import { EmpDetailsComponent } from './emp-details/emp-details.component';
 import { EmpComponent } from './emp/emp.component';
 import { EventsComponent } from './19April/events/events.component';
+import { NgForComponent } from './23April/ng-for/ng-for.component';
+import { AttDirComponent } from './23April/att-dir/att-dir.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { EventsComponent } from './19April/events/events.component';
     Test1Component,
     EmpDetailsComponent,
     EmpComponent,
-    EventsComponent
+    EventsComponent,
+    NgForComponent,
+    AttDirComponent
   ],
   imports: [
     BrowserModule,
