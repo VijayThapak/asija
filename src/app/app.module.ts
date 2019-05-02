@@ -9,6 +9,11 @@ import { EmpComponent } from './emp/emp.component';
 import { EventsComponent } from './19April/events/events.component';
 import { NgForComponent } from './23April/ng-for/ng-for.component';
 import { AttDirComponent } from './23April/att-dir/att-dir.component';
+import { Todo1Component } from './todo1/todo1.component';
+import { TodoListComponent } from './02May/todo-list/todo-list.component';
+import { TodoComponent } from './02May/todo/todo.component';
+import { AddTodoComponent } from './02May/add-todo/add-todo.component';
+import { TodoLayoutComponent } from './02May/todo-layout/todo-layout.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +23,12 @@ import { AttDirComponent } from './23April/att-dir/att-dir.component';
     EmpComponent,
     EventsComponent,
     NgForComponent,
-    AttDirComponent
+    AttDirComponent,
+    Todo1Component,
+    TodoListComponent,
+    TodoComponent,
+    AddTodoComponent,
+    TodoLayoutComponent
   ],
   imports: [
     BrowserModule,
