@@ -14,6 +14,7 @@ export class TodoLayoutComponent implements OnInit {
 
   addTodo(todoName) {
     console.log(todoName);
+    this.newtodo = todoName;
   }
 
 }

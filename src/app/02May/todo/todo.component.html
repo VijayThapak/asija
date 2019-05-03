@@ -1,4 +1,4 @@
 <td>{{index+ 1}}</td>
-<td><input type="checkbox" (change)="completedTask(todo)" [(ngModel)]="todo.isCompleted"></td>
+<td><input type="checkbox" [(ngModel)]="todo.isCompleted"></td>
 <td [ngClass]="todo.isCompleted ? 'taskDone' : 'notDone'">{{todo.taskName}}</td>
-<td><a href="javascript:;"><i class="fa fa-close"></i></a></td>
+<td><a href="javascript:;" class="btn btn-success" (click)="deleteTodo(todo.todoId)">Delete</a></td>

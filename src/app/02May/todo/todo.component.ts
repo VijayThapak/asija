@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'cafu-todo',
@@ -9,13 +9,17 @@ export class TodoComponent implements OnInit {
   @Input('myTodo') todo;
   @Input() index;
 
+  @Output() deleteCurrentTodo = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
     console.log(this.todo);
   }
 
-  completedTask(todo){
+  deleteTodo(todo) {
+    console.log(todo);
+    this.deleteCurrentTodo.emit(todo);
 
   }
 }
