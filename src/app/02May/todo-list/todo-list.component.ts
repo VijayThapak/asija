@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
 import * as uuid from 'uuid';
+import { TodoService } from '../../todo.service';
 
 @Component({
   selector: 'cafu-todo-list',
@@ -8,20 +9,29 @@ import * as uuid from 'uuid';
   styles: []
 })
 export class TodoListComponent implements OnInit, OnChanges {
-  @Input() todoName;
-  todos = [
-    {todoId: 1, taskName: "Hello 1", isCompleted: false},
-    {todoId: 2, taskName: "Hello 2", isCompleted: true}
-  ];
+  @Input() todoNameListComp;
+  @Input() todoNameListComp1;
+  todos :any[] = [];
 
-  constructor() { }
+  constructor(private todoService: TodoService) { }
 
   ngOnInit() {
+    this.fetchTodoList();
   }
 
+  fetchTodoList(){
+    this.todoService.getTodoList().subscribe((data) => {
+      this.todos = data;
+    }, (err)=>{
+      console.log(err);
+    });
+  }
+
+
+  // {todoNameListComp : '', todoNameListComp1: ''}
   ngOnChanges(data) {
-    if (data.todoName.currentValue) {
-      this.todos.push({todoId: uuid.v4(), taskName: data.todoName.currentValue, isCompleted: false});
+    if (data.todoNameListComp.currentValue) {
+      this.todos.push({todoId: uuid.v4(), taskName: data.todoNameListComp.currentValue, isCompleted: false});
     }
   }
 

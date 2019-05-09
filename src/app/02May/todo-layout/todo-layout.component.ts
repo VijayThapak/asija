@@ -6,15 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class TodoLayoutComponent implements OnInit {
-  newtodo = '';
+  public newtodoLayout = '';
   constructor() { }
 
   ngOnInit() {
   }
 
-  addTodo(todoName) {
-    console.log(todoName);
-    this.newtodo = todoName;
+  addLayoutTodo(todoName) {
+    // console.log(todoName);
+    this.newtodoLayout = todoName;
   }
 
 }

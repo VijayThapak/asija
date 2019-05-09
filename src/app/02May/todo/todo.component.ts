@@ -7,6 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class TodoComponent implements OnInit {
   @Input('myTodo') todo;
+  // @Input() myTodo;
   @Input() index;
 
   @Output() deleteCurrentTodo = new EventEmitter();
