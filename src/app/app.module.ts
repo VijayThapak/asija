@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -15,6 +15,8 @@ import { TodoListComponent } from './02May/todo-list/todo-list.component';
 import { TodoComponent } from './02May/todo/todo.component';
 import { AddTodoComponent } from './02May/add-todo/add-todo.component';
 import { TodoLayoutComponent } from './02May/todo-layout/todo-layout.component';
+import { TemplateDrivenFormComponent } from './14May/template-driven-form/template-driven-form.component';
+import { ReactiveFormComponent } from './14May/reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -29,11 +31,14 @@ import { TodoLayoutComponent } from './02May/todo-layout/todo-layout.component';
     TodoListComponent,
     TodoComponent,
     AddTodoComponent,
-    TodoLayoutComponent
+    TodoLayoutComponent,
+    TemplateDrivenFormComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],

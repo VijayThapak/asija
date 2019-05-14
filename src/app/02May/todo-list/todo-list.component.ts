@@ -20,7 +20,7 @@ export class TodoListComponent implements OnInit, OnChanges {
   }
 
   fetchTodoList(){
-    this.todoService.getTodoList().subscribe((data) => {
+    this.todoService.getTodoList().subscribe((data:any[]) => {
       this.todos = data;
     }, (err)=>{
       console.log(err);
@@ -31,12 +31,19 @@ export class TodoListComponent implements OnInit, OnChanges {
   // {todoNameListComp : '', todoNameListComp1: ''}
   ngOnChanges(data) {
     if (data.todoNameListComp.currentValue) {
-      this.todos.push({todoId: uuid.v4(), taskName: data.todoNameListComp.currentValue, isCompleted: false});
+      const newTodo = {id: uuid.v4(), taskName: data.todoNameListComp.currentValue, isCompleted: false};
+      this.todoService.addNewTodo(newTodo).subscribe((res) => {
+        this.todos.push(newTodo);
+        console.log(res);
+      }, (err) => {
+        console.log(err);
+      })
+
     }
   }
 
   deleteTodo(id) {
-    this.todos = this.todos.filter(obj => obj.todoId !== id);
+    this.todos = this.todos.filter(obj => obj.id !== id);
   }
 
 }

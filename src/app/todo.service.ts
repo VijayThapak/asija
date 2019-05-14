@@ -16,4 +16,8 @@ export class TodoService {
   getTodoList() {
     return this.http.get(this.getFullUrl('/todos'));
   }
+
+  addNewTodo(body) {
+    return this.http.post(this.getFullUrl('/todos'), body);
+  }
 }
