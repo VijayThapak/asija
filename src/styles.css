@@ -67,3 +67,7 @@ span.psw {
      width: 100%;
   }
 }
+
+.ng-invalid {
+  border: 1px solid red !important;
+}

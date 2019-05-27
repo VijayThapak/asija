@@ -1,18 +1,24 @@
 <h2>Login Form</h2>
 
-<form [formGroup]="myForm">
+<form [formGroup]="loginForm">
   <div class="imgcontainer">
   </div>
 
   <div class="container">
     <label for="uname"><b>Username</b></label>
-    <input type="text" formControlName="uname" placeholder="Enter Username" name="uname">
+    <input type="text" formControlName="userName" class="ng-invalid" placeholder="Enter Username" name="uname">
 
     <label for="psw"><b>Password</b></label>
     <!-- [ngModelOptions]="{standalone: true}" -->
-    <input type="password" formControlName="password" placeholder="Enter Password" name="pwd">
+    <input type="password" formControlName="pwd" placeholder="Enter Password" name="pwd">
 
-    <button type="submit" (click)="submitForm()">Login</button>
-    <button type="button" class="cancelbtn" (click)="myForm.reset()">Cancel</button>
+    <div formGroupName="address">
+      <input type="text" formControlName="area" placeholder="Area">
+      <input type="text" formControlName="city" placeholder="City">
+    </div>
+
+    <button type="submit" [disabled]="loginForm.invalid" (click)="submitForm()">Login</button>
+    <button type="button" class="cancelbtn" (click)="resetForm()">Cancel</button>
+    <button type="button" class="btn btn-success" (click)="disableInput()">Disabled Input</button>
   </div>
 </form>
