@@ -1,5 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl, AbstractControl, ValidatorFn } from '@angular/forms';
+
+
+// function myValidator(control: AbstractControl): {[key: string]: boolean } | null {
+//   if (control.value.length < 2) {
+//     return {'invalid-name': true }
+//   }
+//   return null;
+// }
+
+function myValidator(value): ValidatorFn {
+  return (control: AbstractControl): {[key: string]: boolean } | null => {
+    if (control.value.length < value) {
+      return {'invalid-name': true }
+    }
+    return null;
+  }
+}
+
+  // function test(control: FormGroup): {[key: string]: boolean } | null {
+  //   if (control.value.length < 5) {
+  //     return {'invalid-name': true }
+  //   }
+  //   return null;
+  // }
 
 @Component({
   selector: 'cafu-reactive-form',
@@ -13,22 +37,29 @@ export class ReactiveFormComponent implements OnInit {
   ngOnInit() {
     // this.initializeForm();
     this.formGroupType();
+    this.loginForm.valueChanges.subscribe(data => {
+      console.log(data);
+    });
+
+    this.loginForm.get('userName').valueChanges.subscribe(data => {
+      console.log(data);
+    })
   }
 
-  initializeForm() {
-    this.loginForm = this.fb.group({
-      userName: [{value: 'Vijay', disabled: false}, [Validators.required]],
-      pwd: ['12345y', [Validators.required, Validators.minLength(5)]],
-      address: this.fb.group({
-        area: [],
-        city: []
-      })
-    });
-  }
+  // initializeForm() {
+  //   this.loginForm = this.fb.group({
+  //     userName: [{value: 10, disabled: false}, [Validators.required, myValidator]],
+  //     pwd: ['12345y', [Validators.required, Validators.minLength(5)]],
+  //     address: this.fb.group({
+  //       area: [],
+  //       city: []
+  //     })
+  //   });
+  // }
 
   formGroupType() {
     this.loginForm = new FormGroup({
-      userName: new FormControl("Vijay", [Validators.required]),
+      userName: new FormControl("Vijay", [Validators.required, myValidator(5)]),
       pwd: new FormControl('345678i', [Validators.minLength(5)]),
       address: new FormGroup({
         area: new FormControl('om vihar'),
