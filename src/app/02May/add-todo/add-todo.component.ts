@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'cafu-add-todo',
+  selector: 'app-add-todo',
   templateUrl: './add-todo.component.html',
   styles: []
 })

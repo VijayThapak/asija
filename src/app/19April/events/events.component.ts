@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'cafu-events',
+  selector: 'app-events',
   templateUrl: './events.component.html',
   styles: []
 })

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'cafu-template-driven-form',
+  selector: 'app-template-driven-form',
   templateUrl: './template-driven-form.component.html',
   styles: []
 })

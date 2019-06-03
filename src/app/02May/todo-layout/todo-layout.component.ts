@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'cafu-todo-layout',
+  selector: 'app-todo-layout',
   templateUrl: './todo-layout.component.html',
   styles: []
 })

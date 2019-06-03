@@ -4,7 +4,7 @@ import * as uuid from 'uuid';
 import { TodoService } from '../../todo.service';
 
 @Component({
-  selector: 'cafu-todo-list',
+  selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
   styles: []
 })

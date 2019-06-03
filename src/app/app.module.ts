@@ -15,8 +15,7 @@ import { TodoListComponent } from './02May/todo-list/todo-list.component';
 import { TodoComponent } from './02May/todo/todo.component';
 import { AddTodoComponent } from './02May/add-todo/add-todo.component';
 import { TodoLayoutComponent } from './02May/todo-layout/todo-layout.component';
-import { TemplateDrivenFormComponent } from './14May/template-driven-form/template-driven-form.component';
-import { ReactiveFormComponent } from './14May/reactive-form/reactive-form.component';
+import { Feature1Module } from './feature1/feature1.module';
 
 @NgModule({
   declarations: [
@@ -32,14 +31,13 @@ import { ReactiveFormComponent } from './14May/reactive-form/reactive-form.compo
     TodoComponent,
     AddTodoComponent,
     TodoLayoutComponent,
-    TemplateDrivenFormComponent,
-    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    Feature1Module
   ],
   providers: [],
   bootstrap: [AppComponent]

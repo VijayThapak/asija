@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'cafu-att-dir',
+  selector: 'app-att-dir',
   templateUrl: './att-dir.component.html',
   styles: []
 })

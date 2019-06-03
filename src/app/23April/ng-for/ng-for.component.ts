@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'cafu-ng-for',
+  selector: 'app-ng-for',
   templateUrl: './ng-for.component.html',
   styles: []
 })

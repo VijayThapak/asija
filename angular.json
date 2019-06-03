@@ -7,7 +7,7 @@
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "cafu",
+      "prefix": "app",
       "schematics": {},
       "architect": {
         "build": {
