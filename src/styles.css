@@ -71,3 +71,8 @@ span.psw {
 .ng-invalid {
   border: 1px solid red !important;
 }
+
+.active {
+  color: #ffffff;
+  background-color: #4CAF50
+}

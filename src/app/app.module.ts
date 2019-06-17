@@ -2,42 +2,40 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { Test1Component } from './test1/test1.component';
-import { EmpDetailsComponent } from './emp-details/emp-details.component';
-import { EmpComponent } from './emp/emp.component';
-import { EventsComponent } from './19April/events/events.component';
-import { NgForComponent } from './23April/ng-for/ng-for.component';
-import { AttDirComponent } from './23April/att-dir/att-dir.component';
-import { Todo1Component } from './todo1/todo1.component';
-import { TodoListComponent } from './02May/todo-list/todo-list.component';
-import { TodoComponent } from './02May/todo/todo.component';
-import { AddTodoComponent } from './02May/add-todo/add-todo.component';
-import { TodoLayoutComponent } from './02May/todo-layout/todo-layout.component';
-import { Feature1Module } from './feature1/feature1.module';
+import { LayoutComponent } from './17June/layout/layout.component';
+import { NoDataComponent } from './17June/no-data/no-data.component';
+import { Page1Component } from './17June/page1/page1.component';
+import { Page2Component } from './17June/page2/page2.component';
+import { Page3Component } from './17June/page3/page3.component';
 
+
+// const routes: Routes = [
+//   {
+//     path: 'layout',
+//     component: LayoutComponent
+//   }
+// ];
 @NgModule({
   declarations: [
     AppComponent,
-    Test1Component,
-    EmpDetailsComponent,
-    EmpComponent,
-    EventsComponent,
-    NgForComponent,
-    AttDirComponent,
-    Todo1Component,
-    TodoListComponent,
-    TodoComponent,
-    AddTodoComponent,
-    TodoLayoutComponent,
+    LayoutComponent,
+    NoDataComponent,
+    Page1Component,
+    Page2Component,
+    Page3Component
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    Feature1Module
+    // Feature1Module,
+    // RouterModule.forRoot(routes)
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
