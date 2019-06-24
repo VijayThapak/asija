@@ -1,1 +1,16 @@
-<app-reactive-form></app-reactive-form>
+<div class="container">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li><a href="#">Home</a></li>
+        <li><a routerLink="/page1" routerLinkActive="active" href="#">Page 1</a>
+        </li>
+        <li><a routerLink="/page2" routerLinkActive="active" href="#">Page 2</a></li>
+        <li><a [routerLink]="['/page3']" routerLinkActive="active" href="#">Page 3</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<!-- <app-reactive-form></app-reactive-form> -->
+<router-outlet></router-outlet>
+<p>Footer Component</p>

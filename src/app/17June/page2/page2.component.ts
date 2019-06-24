@@ -3,8 +3,9 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-page2',
   template: `
+
     <p>
-      page2 works!
+      Product Page
     </p>
   `,
   styles: []
