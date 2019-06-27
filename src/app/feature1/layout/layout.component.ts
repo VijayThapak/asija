@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-layout',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
-  constructor() { }
+  title: string;
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+
+    this.title = this.route.snapshot.data.uname.username;
+
+    // this.route.params.subscribe(data => {
+    //   console.log(data);
+    // })
   }
 
 }

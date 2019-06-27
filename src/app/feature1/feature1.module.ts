@@ -7,11 +7,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { TemplateDrivenFormComponent } from './14May/template-driven-form/template-driven-form.component';
 import { ListComponent } from './list/list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { AuthGuard } from './guards/auth.guard';
+import { DataResolverService } from './resolver/data-resolver.service';
 
 const routes: Routes = [
   {
-    path: 'product',
+    path: '',
     component: LayoutComponent,
+    canActivate: [AuthGuard],
+    resolve: {uname: DataResolverService},
     children: [
       // {
       //   path: 'reactive',
@@ -22,7 +26,7 @@ const routes: Routes = [
         component: ListComponent
       },
       {
-        path: ':id',
+        path: ':id/:name',
         component: ProductDetailComponent
       },
       {
@@ -41,6 +45,7 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forChild(routes)
   ],
+  providers: [DataResolverService],
   exports: [RouterModule]
 })
 export class Feature1Module { }

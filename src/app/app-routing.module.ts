@@ -24,8 +24,12 @@ const routes: Routes = [
     component: Page3Component
   },
   {
+    path: 'product',
+    loadChildren: './feature1/feature1.module#Feature1Module'
+  },
+  {
     path: '',
-    redirectTo: '/layout',
+    redirectTo: '/page1',
     pathMatch: 'full'
   },
   {

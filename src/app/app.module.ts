@@ -26,7 +26,7 @@ import { Feature1Module } from './feature1/feature1.module';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    Feature1Module,
+    // Feature1Module,
     AppRoutingModule
   ],
   providers: [],

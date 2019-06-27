@@ -21,7 +21,10 @@ export class ProductDetailComponent implements OnInit {
     //   )
     // )}
 
-    console.log(this.route.snapshot.paramMap.get('id'));
+    // console.log(this.route.snapshot.paramMap.get('id'));
+    this.route.params.subscribe(param => {
+      console.log('in subscribe', param);
+    });
   }
 
 }
